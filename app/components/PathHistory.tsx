@@ -1,0 +1,33 @@
+"use client";
+import { usePathname } from "next/navigation";
+
+export default function PathHistory() {
+  const pathname = usePathname().split('/').filter(item => item);
+  pathname.unshift('Home');
+
+  return (
+    <div className="container h-[64px] flex items-center text-white">
+      {pathname.map((item, index) => {
+        if (index === pathname.length - 1) {
+          return (
+            <div key={index} className="flex items-center cursor-default">
+              <span className="mx-1 bg-white w-[1px] h-[16px]" />
+              <span className="text-[14px] font-medium text-center capitalize px-2">
+                {item.replace(/-/g, ' ')}
+              </span>
+            </div>
+          ) 
+        } else {
+          return (
+            <a key={index} href={index === 0 ? '/' : `/${item}`} className="flex items-center">
+              {index === 0 ? '' : <span className="mx-1 bg-white w-[1px] h-[16px]" />}
+              <span className="text-[14px] font-medium text-center capitalize px-2">
+                {item.replace(/-/g, ' ')}
+              </span>
+            </a>
+          )
+        }
+      })}
+    </div>
+  )
+}

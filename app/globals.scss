@@ -26,3 +26,33 @@ dialog::backdrop {
   margin-left: auto;
   margin-right: auto;
 }
+
+.purchase-gradient-bg {
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 0%, #000 70%);
+
+  .purchase-btn {
+    border: 1px solid var(--primary-500p, #00CC7E);
+    background: linear-gradient(90deg, rgba(73, 223, 140, 0.50) -1.61%, rgba(73, 223, 140, 0.00) 100%), rgba(47, 47, 47, 0.20);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.06), 0 0 1px 0 rgba(0, 0, 0, 0.04);
+  }
+}
+
+.gradient-text-bg {
+  background: var(--Gradients-Mono, linear-gradient(270deg, rgba(37, 37, 37, 0.00) 0%, #252525 100%));
+}
+.mini-card-bg {
+  .img-container {
+    background: linear-gradient(90deg, rgba(37, 37, 37, 0.00) 0%, var(--neutral-900n, #252525) 100%), linear-gradient(180deg, var(--pp-300, #70B9FF) 0%, var(--pp-900, #00274D) 100%);
+  }
+  .mini-card-gradient-bg {
+    background: linear-gradient(90deg, #252525 22.92%, #000 100%);
+  }
+}
+.game-gradient-bg {
+  .price {
+    background: linear-gradient(270deg, rgba(47, 47, 47, 0.00) 0%, #2F2F2F 100%);
+  }
+  .desc {
+    background: linear-gradient(270deg, rgba(37, 37, 37, 0.00) 0%, #252525 100%);
+  }
+}

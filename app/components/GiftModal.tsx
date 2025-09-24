@@ -1,127 +1,127 @@
 import React from "react"
 import InputField from "@/app/components/InputField"
 import OutlinedBtn from "@/app/components/OutlinedBtn"
-
-interface formData {
-  senderName: string
-  recipientName: string
-  recipientEmail: string
-  message: string
-  price: number
-}
+import { OrderPayload } from "@/app/types/api"
 
 interface GiftModalProps {
   open: boolean
   onClose: () => void
-  onSubmit: (data: formData) => void
+  onSubmit: (data: OrderPayload) => void
 }
 
 
-import { useState } from "react";
+import { useState } from "react"
 
-const GiftModal: React.FC<GiftModalProps> = ({ open, onClose, onSubmit }) => {
-  const [recipientEmail, setRecipientEmail] = useState("");
-  const [confirmEmail, setConfirmEmail] = useState("");
-  const [emailError, setEmailError] = useState(false);
+export default function GiftModal({ open, onClose, onSubmit }: GiftModalProps) {
+
+  const [senderName, setSenderName] = useState("")
+  const [recipientName, setRecipientName] = useState("")
+  const [recipientEmail, setRecipientEmail] = useState("")
+  const [confirmEmail, setConfirmEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [emailError, setEmailError] = useState(false)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (recipientEmail !== confirmEmail) {
-      setEmailError(true);
-      return;
+      setEmailError(true)
+      return
     }
   
-    setEmailError(false);
+    setEmailError(false)
   
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
     onSubmit({
-      senderName: formData.get("senderName") as string,
-      recipientName: formData.get("recipientName") as string,
-      recipientEmail: formData.get("recipientEmail") as string,
-      message: formData.get("message") as string,
-      price: 2500,
-    });
+      senderName,
+      recipientName,
+      recipientEmail,
+      message,
+      price: 1500,
+    })
   }
 
   if (!open) return null
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90">
-      <div className="relative w-[600px] bg-[#252525] flex flex-col justify-center items-center backdrop-blur modal-border p-4">
+      <div className="relative md:w-[600px] w-full md:mx-0 mx-4 md:mt-0 mt-8 md:h-auto h-full bg-[#252525] flex justify-center items-center backdrop-blur modal-border p-4">
         <form
-          className="w-full h-full flex flex-col gap-6 justify-between items-center"
+          className="w-full h-full md:gap-y-6 gap-y-4 gap-x-4 grid grid-cols-1 md:grid-cols-2 justify-between items-center md:mb-0 mb-2 overflow-y-auto"
           onSubmit={handleSubmit}
         >
-          <h2 className="text-2xl font-extrabold mb-4">Gift Details</h2>
-          <div className="flex w-full gap-4">
+          <h2 className="text-2xl font-extrabold leading-[32px] md:col-span-2 text-center">Gift Details</h2>
+          <InputField
+            label="Sender Name*"
+            name="senderName"
+            required
+            value={senderName}
+            onChange={e => setSenderName(e.target.value)}
+          />
+          <InputField
+            label="Recipient Name*"
+            name="recipientName"
+            required
+            value={recipientName}
+            onChange={e => setRecipientName(e.target.value)}
+          />
+          <div className="flex flex-col w-full self-start">
             <InputField
-              label="Sender Name*"
-              name="senderName"
+              label="Recipient Email*"
+              name="recipientEmail"
+              type="email"
               required
-            />
-            <InputField
-              label="Recipient Name*"
-              name="recipientName"
-              required
+              value={recipientEmail}
+              onChange={e => setRecipientEmail(e.target.value)}
             />
           </div>
-          <div className="flex w-full gap-4">
-            <div className="flex flex-col w-full">
-              <InputField
-                label="Recipient Email*"
-                name="recipientEmail"
-                type="email"
-                required
-                value={recipientEmail}
-                onChange={e => setRecipientEmail(e.target.value)}
-              />
+          <div className="flex flex-col w-full">
+            <InputField
+              label="Confirm Email*"
+              name="confirmEmail"
+              type="email"
+              required
+              value={confirmEmail}
+              onChange={e => setConfirmEmail(e.target.value)}
+              inputClassName={emailError ? "border-red-500" : ""}
+            />
+            {emailError && (
+              <span className="text-red-500 text-xs mt-1">Invalid email</span>
+            )}
             </div>
-            <div className="flex flex-col w-full">
-              <InputField
-                label="Confirm Email*"
-                name="confirmEmail"
-                type="email"
-                required
-                value={confirmEmail}
-                onChange={e => setConfirmEmail(e.target.value)}
-                inputClassName={emailError ? "border-red-500" : ""}
-              />
-              {emailError && (
-                <span className="text-red-500 text-xs mt-1">Invalid email</span>
-              )}
-            </div>
-          </div>
-          <label htmlFor="message" className="flex flex-col w-full text-xs gap-1">
+          <label htmlFor="message" className="flex flex-col md:col-span-2 w-full text-xs gap-1">
             <span>Message</span>
             <textarea
               name="message"
               rows={2}
-              className="flex w-full mb-2 p-2 border text-sm resize-none border border-[#505050] bg-black/20 text-[#AAA]"
+              className="flex w-full p-2 border text-sm resize-none border border-[#505050] bg-black/20 text-[#AAA] input-field"
+              value={message}
+              onChange={e => setMessage(e.target.value)}
             />
           </label>
-          <div className="flex w-full gap-4">
-            <OutlinedBtn
-              flat
-              btnClassName="py-2 px-8 flex-1"
-              onClick={() => { onClose(); setEmailError(false); setRecipientEmail(""); setConfirmEmail(""); }}
-            >
-              <span>Cancel</span>
-            </OutlinedBtn>
-            <OutlinedBtn
-              type="submit"
-              btnClassName="py-2 px-8 flex-1"
-              primary
-            >
-              <span>Confirm</span>
-            </OutlinedBtn>
-          </div>
+          <OutlinedBtn
+            flat
+            btnClassName="py-2 px-8 flex-1 md:order-1 order-2 w-full max-h-10 h-10"
+            onClick={() => {
+              onClose()
+              setEmailError(false)
+              setSenderName("")
+              setRecipientName("")
+              setRecipientEmail("")
+              setConfirmEmail("")
+              setMessage("")
+            }}
+          >
+            <span>Cancel</span>
+          </OutlinedBtn>
+          <OutlinedBtn
+            type="submit"
+            btnClassName="py-2 px-8 flex-1 h-10 md:order-2 w-full max-h-10 order-1"
+            primary
+          >
+            <span>Confirm</span>
+          </OutlinedBtn>
         </form>
       </div>
     </div>
   )
 }
-
-export default GiftModal

@@ -12,7 +12,7 @@ export default function OutlinedBtn({ children, flat = false, primary = false, b
   return (
     <button
       type={type}
-      className={`flex items-center justify-center gap-2 px-4 py-2 ${flat ? "" : primary ? "purchase-btn" : "border border-white"} cursor-pointer ${btnClassName}`}
+      className={`flex items-center justify-center gap-2 px-4 py-2 ${flat ? "flat-btn" : primary ? "purchase-btn" : "border border-white outlined-btn"} cursor-pointer ${btnClassName}`}
       onClick={onClick}
     >
       {children}

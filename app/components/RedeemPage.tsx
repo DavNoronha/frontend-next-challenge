@@ -66,15 +66,15 @@ export default function RedeemPage() {
     <div>
       <div className="order-gradient-bg" />
 
-      <div className="flex flex-col gap-[40px]">
+      <div className="flex flex-col md:gap-[40px] gap-2 md:mb-0 mb-[80px]">
         <PathHistory />
 
-        <BigTitle titleClassName="!text-[32px]">
+        <BigTitle titleClassName="!text-[32px] pt-[40px] md:pt-[0px] md:text-start text-center">
           {pathname[pathname.length - 1].replace(/-/g, ' ')}
         </BigTitle>
 
         <div className={`flex flex-col ${isGiftPage ? "" : "gap-[2px]"}`}>
-          <div className={` ${isGiftPage ? "h-[80px]" : "h-[64px]"} gradient-text-bg p-4`}>
+          <div className={` ${isGiftPage ? "h-[80px]" : "md:h-[64px] h-full"} gradient-text-bg p-4`}>
             {isGiftPage ? (
               <div>
                 <p className="flex items-center text-xs font-normal mb-0 px-2">
@@ -85,26 +85,26 @@ export default function RedeemPage() {
                 <p className="text-xs font-normal p-2">{order.message}</p>
               </div>
             ) : (
-              <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-extrabold">{formatDate(order.updatedAt)}</h2>
+              <div className="flex md:flex-row flex-col justify-between items-center">
+                <h2 className="text-2xl font-extrabold md:mb-0 mb-2">{formatDate(order.updatedAt)}</h2>
                 <p className="text-sm font-normal">Order #{order.id}</p>
               </div>
             )}
           </div>
-          <div className="flex justify-start items-center gradient-text-bg p-4 gap-6">
+          <div className="flex md:flex-row flex-col justify-start items-center gradient-text-bg p-4 md:gap-6 gap-4">
             <Image src="/order-img.png" alt="Order Image" width={292} height={136} />
-            <div className="flex flex-col justify-between w-full h-[136px]">
+            <div className="flex flex-col md:justify-between md:gap-0 gap-4 w-full md:h-[136px] h-full">
               <p className="text-xl">Apple Gift Card</p>
               <p className="flex items-center gap-2 text-[#888]">
                 <Image src="/tree.svg" alt="Tree Icon" width={16} height={16} />
                 <span className="text-[#888] text-xs">6 Trees saved</span>
               </p>
-              <div className="flex items-center gap-[10px]">
+              <div className="flex md:flex-row flex-col items-center md:gap-[10px] gap-4">
                 {order.shareLink && !isGiftPage ? (
                   <OutlinedBtn
-                    btnClassName="!px-4 !py-[5px] whitespace-nowrap"
+                    btnClassName="!px-4 !py-[5px] whitespace-nowrap w-full md:w-[173px] md:order-1 order-2"
                     onClick={() => {
-                      navigator.clipboard.writeText(order.redeemCode)
+                      navigator.clipboard.writeText(order.shareLink!)
                       alert("Code copied to clipboard")
                     }}
                   >
@@ -112,14 +112,14 @@ export default function RedeemPage() {
                   </OutlinedBtn>
                 ) : (
                   <OutlinedBtn
-                    btnClassName="!px-4 !py-[5px] w-[141px] whitespace-nowrap"
+                    btnClassName="!px-4 !py-[5px] w-[141px] whitespace-nowrap w-full md:w-[141px]"
                     onClick={() => window.location.href = "#"}
                   >
                     <span className="text-sm font-normal">How to Redeem</span>
                   </OutlinedBtn>
                 )}
                 {order.shareLink && !isGiftPage ? (
-                  <p className="flex items-center text-xs font-normal text-[#888] ml-[2px]">
+                  <p className="flex items-center text-xs font-normal text-[#888] ml-[2px] md:order-2 order-1">
                     <span>{order.senderName}</span>
                     <Image src="/arrow-right.svg" alt="Link Icon" width={12} height={12} className="mx-1" />
                     <span>{order.recipientName}</span>

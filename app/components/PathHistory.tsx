@@ -7,7 +7,7 @@ export default function PathHistory() {
   pathname.unshift('Home')
 
   return (
-    <div className="container h-[64px] flex items-center text-white">
+    <div className="container h-[64px] md:flex hidden items-center text-white">
       {pathname.map((item, index) => {
         if (index === pathname.length - 1) {
           return (

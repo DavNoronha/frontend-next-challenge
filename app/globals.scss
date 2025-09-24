@@ -45,6 +45,61 @@ dialog::backdrop {
   border: 1px solid var(--primary-500p, #00CC7E);
   background: linear-gradient(90deg, rgba(73, 223, 140, 0.50) -1.61%, rgba(73, 223, 140, 0.00) 100%), rgba(47, 47, 47, 0.20);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.06), 0 0 1px 0 rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    background: linear-gradient(90deg, rgba(73, 223, 140, 0.70) -1.61%, rgba(73, 223, 140, 0.10) 100%), rgba(47, 47, 47, 0.30);
+    transition: all 0.3s ease-in-out;
+    outline: 1px solid rgba(73, 223, 140, 0.50);
+  }
+}
+.outlined-btn {
+  border: 1px solid white;
+  background: transparent;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.10);
+    transition: all 0.3s ease-in-out;
+    outline: 1px solid rgba(255, 255, 255, 0.50);
+  }
+}
+.flat-btn {
+  border: none;
+  background: transparent;
+  
+  &:hover {
+    border: 1px solid white;
+    background: rgba(255, 255, 255, 0.10);
+    transition: all 0.3s ease-in-out;
+    outline: 1px solid rgba(255, 255, 255, 0.50);
+  }
+}
+
+.input-field {
+  outline: none;
+  transition: box-shadow 0.2s, border 0.2s;
+
+  &:hover {
+    border: 1.5px solid white;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.08);
+  }
+  &:focus {
+    border: 1.5px solid var(--primary-500p, #00CC7E);
+    box-shadow: 0 0 0 2px rgba(0,204,126,0.3);
+  }
+}
+.header-input {
+  box-shadow: inset 0px -1px 0px 0px #505050;
+  transition: box-shadow 0.2s;
+  &::placeholder {
+    color: #AAA;
+    transition: color 0.2s;
+  }
+  &:hover {
+    box-shadow: inset 0px -1.5px 0px 0px #fff;
+  }
+  &:hover::placeholder {
+    color: #fff;
+  }
 }
 
 .gradient-text-bg {
@@ -68,4 +123,24 @@ dialog::backdrop {
 }
 .carousel-gradient-bg {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (max-width: 860px) {
+  .container {
+    max-width: 640px;
+    padding: 0 16px;
+  }
+  .purchase-gradient-bg {
+    background: transparent;
+  }
 }

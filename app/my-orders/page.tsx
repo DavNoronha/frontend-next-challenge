@@ -1,6 +1,6 @@
 import RedeemPage from "@/app/components/RedeemPage"
 
-export default function Success() {
+export default function MyOrders() {
   return (
     <RedeemPage />
   )

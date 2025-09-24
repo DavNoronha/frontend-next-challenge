@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex align-center justify-between py-2">
           <div className="flex items-center gap-[24px]">
             <Image src="/pp-logo.png" alt="PlanetPlay Logo" width={164} height={32} priority />
-            <div className="text-neutral-400 text-[12px] flex items-center">
+            <div className="text-neutral-400 text-xs flex items-center">
               <a href="#">Privacy Policy</a>
               <span className="mx-2 bg-[#AAA] w-[1px] h-[8px]" />
               <a href="#">Terms of Service</a>
@@ -24,9 +24,9 @@ export default function Footer() {
         </div>
          <hr className="mt-8 border-neutral-500 max-[1105px]:mb-0 md:mt-0" />
         <div className="flex flex-col md:flex-row items-center justify-between py-2 mb-4">
-          <span className="text-[12px] text-[#AAA] font-normal">© 2025 PlanetPlay • All rights reserved</span>
+          <span className="text-xs text-[#AAA] font-normal">© 2025 PlanetPlay • All rights reserved</span>
           <div className="flex items-center gap-3">
-            <span className="text-[12px] font-normal text-[#AAA]">Follow us</span>
+            <span className="text-xs font-normal text-[#AAA]">Follow us</span>
             <a href="#">
               <Image src="/socials/blusky.png" alt="Blusky" width={22} height={19.43} />
             </a>
@@ -43,5 +43,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
 interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
+  isOpen: boolean
+  onClose: () => void
+  children: React.ReactNode
 }
 
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
 
   const handleClose = () => {
-    onClose();
-  };
+    onClose()
+  }
 
   if (isOpen) {
     return (
@@ -30,6 +30,6 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }

@@ -1,8 +1,7 @@
-"use client";
+"use client"
 
-
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Header() {
   return (
@@ -25,11 +24,11 @@ export default function Header() {
           <nav className="flex justify-between text-white min-[1240px]:w-[366px]">
             <a href="#" className="flex items-center gap-2 px-2">
               <Image src="/store.png" alt="Store Logo" width={21.5} height={20.5} />
-              <span className="text-[14px]">Store</span>
+              <span className="text-sm">Store</span>
             </a>
             <a href="#" className="flex items-center gap-2 px-2">
               <Image src="/hub.png" alt="Hub Logo" width={21.5} height={20.5} />
-              <span className="text-[14px]">Hub</span>
+              <span className="text-sm">Hub</span>
             </a>
             <a href="#" className="flex items-center gap-2 px-2 w-[40px]">
               <Image src="/menu.png" alt="Store Logo" width={17.5} height={15.5} />
@@ -44,5 +43,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

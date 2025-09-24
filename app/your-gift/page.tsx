@@ -1,6 +1,6 @@
 import RedeemPage from "@/app/components/RedeemPage"
 
-export default function Gift() {
+export default function YourGift() {
   return (
     <RedeemPage />
   )

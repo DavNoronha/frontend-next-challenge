@@ -4,8 +4,8 @@ export const dynamic = "force-dynamic";
 
 import RedeemPage from "@/app/components/RedeemPage";
 
-export default function YourGift() {
+export default function MyOrders({ params }: { params: { id: string } }) {
   return (
-    <RedeemPage />
+    <RedeemPage orderId={params.id} />
   );
 }

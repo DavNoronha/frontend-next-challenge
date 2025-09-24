@@ -10,7 +10,7 @@ import { Order } from "@/app//types/api"
 import api from "@/app/services/api"
 
 import { useEffect, useState } from "react"
-import { useSearchParams } from "next/navigation"
+
 
 function formatDate(dateString: string) {
   const date = new Date(dateString)
@@ -21,9 +21,7 @@ function formatDate(dateString: string) {
   })
 }
 
-export default function RedeemPage() {
-  const searchParams = useSearchParams()
-  const orderId = searchParams.get("id") as string
+export default function RedeemPage({ orderId }: { orderId: string }) {
 
   const pathname = usePathname().split('/').filter(item => item)
 
@@ -44,7 +42,6 @@ export default function RedeemPage() {
         setLoading(false)
       }
     }
-
     if (orderId) {
       getGiftCard()
     }

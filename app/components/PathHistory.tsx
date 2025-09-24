@@ -7,7 +7,7 @@ export default function PathHistory() {
   pathname.unshift('Home')
 
   return (
-    <div className="container h-[64px] md:flex hidden items-center text-white">
+    <div className="container h-16 md:flex hidden items-center text-white">
       {pathname.map((item, index) => {
         if (index === pathname.length - 1) {
           return (
@@ -20,7 +20,7 @@ export default function PathHistory() {
           ) 
         } else {
           return (
-            <a key={index} href={index === 0 ? '/' : `/${item}`} className="flex items-center">
+            <a key={index} href={index === 0 ? '/' : `#`} className="flex items-center">
               {index === 0 ? '' : <span className="mx-1 bg-white w-[1px] h-[16px]" />}
               <span className="text-sm font-medium text-center capitalize px-2">
                 {item.replace(/-/g, ' ')}

@@ -67,7 +67,7 @@ export default function AppleGiftCard() {
         <PathHistory />
 
         <div className="md:flex items-center justify-between md:h-[176px]">
-          <BigTitle titleClassName="pt-[64px] md:mb-0 mb-[32px]">
+          <BigTitle titleClassName="pt-16 md:mb-0 mb-8">
             Apple Gift Card
           </BigTitle>
 
@@ -90,14 +90,14 @@ export default function AppleGiftCard() {
           />
         </div>
 
-        <div className="md:mb-[80px] mb-[32px]">
+        <div className="md:mb-[80px] mb-8">
           <img src="/apple-gc.png" alt="Apple Gift Card Logo" className="w-[322px] h-[200px]" />
         </div>
 
-        <div className="flex md:flex-row flex-col md:gap-[22px] md:mb-[80px] mb-[32px]">
+        <div className="flex md:flex-row flex-col md:gap-[22px] md:mb-20 mb-8">
           <div className="flex-grow">
             <p className="text-sm font-normal text-[#AAA] mb-4 text-center md:text-left">About this Gift Card</p>
-            <div className="p-4 gradient-text-bg md:mb-[40px] mb-[32px]">
+            <div className="p-4 gradient-text-bg mb-10 mb-8">
               <ul className="list-disc pl-7 md:text-base text-sm font-normal text-white">
                 <li>For all things Apple — iPad, AirPods, Apple Watch, iPhone, MacBook, iCloud, accessories, and more.</li>
                 <li>Perfect for App Store purchases and subscriptions — get apps, games, music, movies, TV shows, and more.</li>
@@ -112,12 +112,12 @@ export default function AppleGiftCard() {
             </div>
 
             <p className="text-sm font-normal text-[#AAA] mb-4">How to Redeem</p>
-            <div className="p-4 gradient-text-bg md:mb-[40px] mb-[32px]">
+            <div className="p-4 gradient-text-bg mb-10 mb-8">
               <p className="md:text-base text-sm font-normal text-white">Go to <a href="#" className="text-[#00CC7E] underline">apple.com/redeem</a> to add to your Apple Account. Use your balance for online and Apple Store purchases.</p>
             </div>
 
             <p className="text-sm font-normal text-[#AAA] mb-4">Terms and Conditions</p>
-            <div className="p-4 gradient-text-bg md:mb-[40px] mb-[32px]">
+            <div className="p-4 gradient-text-bg mb-10 mb-8">
               <p className="md:text-base text-sm font-normal text-white">Valid only for U.S. transactions in Apple properties. For assistance, visit <a href="#" className="text-[#00CC7E] underline">support.apple.com/giftcard</a> or call 1-800-275-2273. Not redeemable at Apple resellers or for cash, and no resale, refunds, or exchanges, except as required by law. Apple is not responsible for unauthorized use. Terms apply see <a href="#" className="text-[#00CC7E] underline">apple.com/us/go/legal/gc.</a> Issued by Apple Value Services, LLC (AVS). ©2025 Apple Inc. All rights reserved.</p>
             </div>
           </div>
@@ -133,15 +133,15 @@ export default function AppleGiftCard() {
           </div>
         </div>
 
-        <div className="md:mb-[80px] mb-[72px]">
-          <div className="flex items-center gap-[32px]">
-            <h3 className="md:text-[32px] text-[24px] font-extrabold md:leading-[40px] leading-[32px]">Last seen</h3>
+        <div className="md:mb-20 mb-[72px]">
+          <div className="flex items-center gap-8">
+            <h3 className="md:text-[32px] text-[24px] font-extrabold md:leading-10 leading-8">Last seen</h3>
             <p className="md:flex hidden text-sm text-white font-normal">View all</p>
           </div>
 
           <GamesCarousel />
 
-          <OutlinedBtn btnClassName="md:hidden flex w-full justify-center h-[32px]">
+          <OutlinedBtn btnClassName="md:hidden flex w-full justify-center h-8">
             <span className="text-sm font-normal text-white">View all</span>
           </OutlinedBtn>
         </div>

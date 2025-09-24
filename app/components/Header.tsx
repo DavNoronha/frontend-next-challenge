@@ -33,7 +33,7 @@ export default function Header() {
               <Image src="/hub.png" alt="Hub Logo" width={21.5} height={20.5} />
               <span className="text-sm hidden xl:block">Hub</span>
             </a>
-            <a href="#" className="flex items-center gap-2 px-2 xl:w-[40px]">
+            <a href="#" className="flex items-center gap-2 px-2 xl:w-10">
               <Image src="/menu.png" alt="Store Logo" width={17.5} height={15.5} />
             </a>
             <a href="#" className="md:flex hidden items-center gap-2 px-2 xl:w-[48px]">

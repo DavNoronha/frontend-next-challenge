@@ -28,7 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       >
         <Header />
 
-        <main className="min-h-screen mt-[64px] container">
+        <main className="mt-16 container">
           {children}
         </main>
 

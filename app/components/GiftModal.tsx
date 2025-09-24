@@ -49,7 +49,7 @@ export default function GiftModal({ open, onClose, onSubmit }: GiftModalProps) {
           className="w-full h-full md:gap-y-6 gap-y-4 gap-x-4 grid grid-cols-1 md:grid-cols-2 justify-between items-center md:mb-0 mb-2 overflow-y-auto"
           onSubmit={handleSubmit}
         >
-          <h2 className="text-2xl font-extrabold leading-[32px] md:col-span-2 text-center">Gift Details</h2>
+          <h2 className="text-2xl font-extrabold leading-8 md:col-span-2 text-center">Gift Details</h2>
           <InputField
             label="Sender Name*"
             name="senderName"

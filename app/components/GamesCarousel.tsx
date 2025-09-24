@@ -19,14 +19,14 @@ export default function GamesCarousel() {
 
   return (
     <div className="relative max-[768px]:w-full max-[768px]:overflow-hidden">
-      <ul className="flex gap-[16px] md:overflow-hidden overflow-auto max-[768px]:flex-nowrap max-[768px]:max-w-full max-[768px]:w-full scrollbar-hide">
+      <ul className="flex gap-4 md:overflow-hidden overflow-auto max-[768px]:flex-nowrap max-[768px]:max-w-full max-[768px]:w-full scrollbar-hide">
         {lastSeenItems.map((item, index) => (
           <li
             key={index}
             className="flex items-center flex-col my-4 w-[292px] min-w-[292px] max-w-[292px] game-gradient-bg cursor-pointer z-10"
           >
-            <img src={item.img} alt={item.name} className="w-[292px] h-[136px] object-cover" />
-            <div className="flex items-center justify-start w-full p-2 gap-1 max-h-[40px] price">
+            <Image src={item.img} alt={item.name} width={292} height={136} className="object-cover w-[292px] h-[136px]" />
+            <div className="flex items-center justify-start w-full p-2 gap-1 max-h-10 price">
               <h2 className="text-xl font-extrabold">{item.value}.00</h2><span className="text-xs font-normal text-[#888]">USD</span>
             </div>
             <div className="w-full px-2 min-h-[96px] desc">

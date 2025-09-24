@@ -14,20 +14,20 @@ interface PurchaseCardProps {
 
 export default function PurchaseCard({ orderForm, onPurchase, onGift }: PurchaseCardProps) {
   return (
-    <div className="flex items-start justify-center flex-col md:w-[384px] min-h-[176px] md:mb-0 mb-[32px] md:p-4 py-4 gap-4 purchase-gradient-bg">
-      <h2 className="font-extrabold text-xl h-[40px] flex items-center">
+    <div className="flex items-start justify-center flex-col md:w-[384px] min-h-[176px] md:mb-0 mb-8 md:p-4 py-4 gap-4 purchase-gradient-bg">
+      <h2 className="font-extrabold text-xl h-10 flex items-center">
         {orderForm?.price ? (orderForm.price / 100).toFixed(2) : '25.00'}
       </h2>
       <div className="flex gap-2 w-full">
         <OutlinedBtn
           primary
-          btnClassName="!px-[32px] h-[40px] flex-grow"
+          btnClassName="!px-8 h-10 flex-grow"
           onClick={onPurchase}
         >
           <span className="text-base">Purchase</span>
         </OutlinedBtn>
         <OutlinedBtn
-          btnClassName={`h-[40px] ${orderForm ? "bg-white text-[#252525] border !border-[#00CC7E]" : ""} `}
+          btnClassName={`h-10 ${orderForm ? "!bg-white text-[#252525] border !border-[#00CC7E]" : ""} `}
           onClick={onGift}
         >
           <span className="text-base">Gift</span>
@@ -47,9 +47,9 @@ export default function PurchaseCard({ orderForm, onPurchase, onGift }: Purchase
               <p>{orderForm.recipientName}</p>
               <p className="ml-2">({orderForm.recipientEmail})</p>
             </div>
-            {orderForm.message && <p className="text-xs p-1">{orderForm.message}</p>}
+            {orderForm.message && <p className="text-xs p-1 max-h-[72px] overflow-auto">{orderForm.message}</p>}
           </div>
-          <button className="px-4 py-2 cursor-pointer" onClick={onGift}>
+          <button className="min-w-8 min-h-7 cursor-pointer" onClick={onGift}>
             <Image src="/edit.svg" alt="Edit Icon" width={13} height={13} className="inline mr-1" />
           </button>
         </div>

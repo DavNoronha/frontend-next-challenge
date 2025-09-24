@@ -66,15 +66,15 @@ export default function RedeemPage() {
     <div>
       <div className="order-gradient-bg" />
 
-      <div className="flex flex-col md:gap-[40px] gap-2 md:mb-0 mb-[80px]">
+      <div className="flex flex-col gap-10 gap-2 md:mb-0 mb-20">
         <PathHistory />
 
-        <BigTitle titleClassName="!text-[32px] pt-[40px] md:pt-[0px] md:text-start text-center">
+        <BigTitle titleClassName="!text-[32px] pt-10 md:pt-0 md:text-start text-center">
           {pathname[pathname.length - 1].replace(/-/g, ' ')}
         </BigTitle>
 
         <div className={`flex flex-col ${isGiftPage ? "" : "gap-[2px]"}`}>
-          <div className={` ${isGiftPage ? "h-[80px]" : "md:h-[64px] h-full"} gradient-text-bg p-4`}>
+          <div className={` ${isGiftPage ? "h-[80px]" : "md:h-16 h-full"} gradient-text-bg p-4`}>
             {isGiftPage ? (
               <div>
                 <p className="flex items-center text-xs font-normal mb-0 px-2">
@@ -119,7 +119,7 @@ export default function RedeemPage() {
                   </OutlinedBtn>
                 )}
                 {order.shareLink && !isGiftPage ? (
-                  <p className="flex items-center text-xs font-normal text-[#888] ml-[2px] md:order-2 order-1">
+                  <p className="flex items-center text-xs w-full font-normal text-[#888] ml-[2px] md:order-2 order-1">
                     <span>{order.senderName}</span>
                     <Image src="/arrow-right.svg" alt="Link Icon" width={12} height={12} className="mx-1" />
                     <span>{order.recipientName}</span>

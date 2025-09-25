@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 export default function PathHistory() {
   const pathname = usePathname().split('/').filter(item => item)
   pathname.unshift('Home')
+  pathname.pop()
 
   return (
     <div className="container h-16 md:flex hidden items-center text-white">

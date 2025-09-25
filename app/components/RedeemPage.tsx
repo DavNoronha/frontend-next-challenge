@@ -67,7 +67,7 @@ export default function RedeemPage({ orderId }: { orderId: string }) {
         <PathHistory />
 
         <BigTitle titleClassName="!text-[32px] pt-10 md:pt-0 md:text-start text-center">
-          {pathname[pathname.length - 1].replace(/-/g, ' ')}
+          {isGiftPage ? "Your Gift" : "My Order"}
         </BigTitle>
 
         <div className={`flex flex-col ${isGiftPage ? "" : "gap-[2px]"}`}>
